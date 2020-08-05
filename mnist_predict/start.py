@@ -40,6 +40,7 @@ def send_example():
         url = f"http://{model}-predictor-default.{namespace}.svc.cluster.local/v1/models/{model}:predict"
 
         x = requests.post(url, data = tf_serving_req)
+        return x
 
     
 def shut_down_server():
@@ -49,7 +50,17 @@ def shut_down_server():
 
 def main():
     start_pipeline()
-    send_example()
+
+    result = None
+    while result is None:
+        try:
+            # connect
+            result = send_example()
+        except:
+             pass
+
+    print(f"Got back: {result}")
+
     shut_down_server()
 
 if __name__ == "__main__":
