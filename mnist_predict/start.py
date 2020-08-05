@@ -39,6 +39,8 @@ def send_example():
         namespace = namespace_file.read()
         url = f"http://{model}-predictor-default.{namespace}.svc.cluster.local/v1/models/{model}:predict"
 
+        print(f"Sending {tf_serving_req} to {url}")
+
         x = requests.post(url, data = tf_serving_req)
         return x
 
@@ -57,7 +59,9 @@ def main():
             # connect
             result = send_example()
         except:
-             pass
+            print("Can't connect...")
+            print("Keep trying...")
+            pass
 
     print(f"Got back: {result}")
 
