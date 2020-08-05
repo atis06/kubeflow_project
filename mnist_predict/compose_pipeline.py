@@ -7,8 +7,6 @@ import kubeflow.fairing.utils
 NAMESPACE = kubeflow.fairing.utils.get_current_k8s_namespace()
 
 print(f"Namespace: {NAMESPACE}")
-with open('namespace', 'w') as namespace_file:
-    namespace_file.write(NAMESPACE)
 
 def train_and_serve(
     data_dir: str,

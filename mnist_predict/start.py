@@ -3,6 +3,7 @@ import compose_pipeline
 import kfp
 import tensorflow as tf
 import requests
+import time
 
 def start_pipeline():
     mnist_pipeline = compose_pipeline.mnist_pipeline
@@ -28,27 +29,25 @@ def start_pipeline():
     )
     
 def send_example():
-    with open('namespace', 'r') as namespace_file:
-        (x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
-        x_test = x_test / 255.0
+    (x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
+    x_test = x_test / 255.0
 
-        image_index = 1005
-        
-        tf_serving_req = {"instances": x_test[image_index : image_index + 1].tolist()}
-        model = 'mnist'
-        namespace = namespace_file.read()
-        url = f"http://{model}-predictor-default.{namespace}.svc.cluster.local/v1/models/{model}:predict"
+    image_index = 1005
 
-        print(f"Sending {tf_serving_req} to {url}")
+    tf_serving_req = {"instances": x_test[image_index : image_index + 1].tolist()}
+    model = 'mnist'
+    namespace = compose_pipeline.NAMESPACE
+    url = f"http://{model}-predictor-default.{namespace}.svc.cluster.local/v1/models/{model}:predict"
 
-        x = requests.post(url, data = tf_serving_req)
-        return x
+    print(f"Sending {tf_serving_req} to {url}")
+
+    x = requests.post(url, data = tf_serving_req)
+    return x
 
     
 def shut_down_server():
-    with open('namespace', 'r') as namespace_file:
-        KFServing = KFServingClient()
-        KFServing.delete('mnist', namespace=namespace_file.read())
+    KFServing = KFServingClient()
+    KFServing.delete('mnist', namespace=compose_pipeline.NAMESPACE)
 
 def main():
     start_pipeline()
@@ -60,6 +59,8 @@ def main():
             result = send_example()
         except:
             print("Can't connect...")
+            print("Wait 30...")
+            time.sleep(30)
             print("Keep trying...")
             pass
 
