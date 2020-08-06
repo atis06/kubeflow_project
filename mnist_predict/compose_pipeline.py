@@ -6,8 +6,6 @@ import kubeflow.fairing.utils
 
 NAMESPACE = kubeflow.fairing.utils.get_current_k8s_namespace()
 
-print(f"Namespace: {NAMESPACE}")
-
 def train_and_serve(
     data_dir: str,
     model_dir: str,
@@ -41,7 +39,7 @@ def train_and_serve(
     kfserving = kfserving_op(
         action="create",
         default_model_uri=f"s3://{export_bucket}/{model_name}",
-        model_name="mnist",
+        model_name=model_name,
         namespace=NAMESPACE,
         framework="tensorflow",
     )
