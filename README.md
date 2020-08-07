@@ -73,6 +73,6 @@ The software is going to work with the default values, but you can customize the
  After the program started, it will create the pipeline and start to request the KFServing inference server with an example until the answer arrives. If everything is working properly, the the software will terminate the inference server in the final step.
  As a result you should see something like this in Kubeflow > Pipelines > Experiments:
  
-![pipeline](ok.png | width=70)
+![pipeline](ok.png)
 
 If you have any questions regarding this topic, please feel free to contact with me.
