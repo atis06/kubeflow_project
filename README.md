@@ -36,7 +36,7 @@ You need to install some dependecies in order to run the script properly. Execut
 cd to the mnist_predict folder then run the following command to create [MinIO](https://min.io/) object store in Kubernetes.
 
     kubectl apply -f config/minio_secret.yaml
-Then you can actually execute the main script by this command:
+Then you can actually execute the main script with this command:
 
     python3 start.py
 The software is going to work with the default values, but you can customize them:
