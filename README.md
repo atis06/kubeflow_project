@@ -7,6 +7,7 @@ This guide has been made for Challenge 035 - Data Scientist - Kubeflow project b
 
 ## How to install Kubeflow?
 Kubeflow can be installed on Linux, Windows and also on MacOs. I will show you how to make it work on Windows, but you can easily do it on your local system by following [this tutorial](https://www.kubeflow.org/docs/started/workstation/).
+
 Setup Kubeflow (MiniKF) on Windows:
 You will need to install [Vagrant](https://www.vagrantup.com/downloads.html) and [Virtual Box](https://www.virtualbox.org/wiki/Downloads).
  1. Create a project folder.
