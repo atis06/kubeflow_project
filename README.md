@@ -3,12 +3,12 @@
 This guide has been made for Challenge 035 - Data Scientist - Kubeflow project by Attila Kántor.
 
 ## What is Kubeflow?
-**Kubeflow** is a **Kubernetes** based machine learning platform developed by Google to enhance and make easier the deployment of machine learning pipelines. Kubeflow implements distributed and scalable solutions through creating chain of separated **Docker** containers for elements of the ML pipeline (e.g. training, serving, monitoring and logging) on the Kubernetes cluster called components. The goal of the platform is to leverage the flexibility and reproducibility of Kubernetes and Docker. 
+[Kubeflow](https://www.kubeflow.org/docs/started/getting-started/) is a [Kubernetes](https://kubernetes.io/) based machine learning platform developed by Google to enhance and make easier the deployment of machine learning pipelines. Kubeflow implements distributed and scalable solutions through creating chain of separated [Docker](https://www.docker.com/) containers for elements of the ML pipeline (e.g. training, serving, monitoring and logging) on the Kubernetes cluster called components. The goal of the platform is to leverage the flexibility and reproducibility of Kubernetes and Docker. 
 
 ## How to install Kubeflow?
-Kubeflow can be installed on Linux, Windows and also on Mac. I will show you how to make it work on Windows, but you can easily do it on your local system by following **this tutorial.**
+Kubeflow can be installed on Linux, Windows and also on MacOs. I will show you how to make it work on Windows, but you can easily do it on your local system by following [this tutorial](https://www.kubeflow.org/docs/started/workstation/).
 Setup Kubeflow (MiniKF) on Windows:
-You will need to install **Vagrant** and **Virtual Box**.
+You will need to install [Vagrant](https://www.vagrantup.com/downloads.html) and [Virtual Box](https://www.virtualbox.org/wiki/Downloads).
  1. Create a project folder.
  2. Open command prompt as administrator.
 	*vagrant init arrikto/minikf
@@ -16,7 +16,7 @@ You will need to install **Vagrant** and **Virtual Box**.
  3. Go to 10.10.10.10 in your browser, then follow the setup instructions.
  4. After these steps you will be able to use Kubeflow platform.
 
-If you have any problems during the setup process please visit **this page**.
+If you have any problems during the setup process please visit [this page](https://www.kubeflow.org/docs/started/workstation/getting-started-minikf/).
 
 ## What is mnist_predict?
 Mnist_predict is an implementation of a Kubeflow pipeline written in Python. It has several functionality like:
@@ -34,7 +34,7 @@ You need to install some dependecies in order to run the script properly. Run th
     pip3 install azure=="4.0.0" --user
     pip3 install kubeflow --user --no-cache
     pip3 install kfserving --user
-cd to the mnist_predict folder then run the following command to create MinIO object store in Kubernetes.
+cd to the mnist_predict folder then run the following command to create [MinIO](https://min.io/) object store in Kubernetes.
 
     kubectl apply -f config/minio_secret.yaml
 Then you can actually execute the main script by this command:
@@ -72,5 +72,6 @@ The software is going to work with the default values, but you can customize the
 
  After the program started, it will create the pipeline and start to request the KFServing inference server with an example until the answer arrives. If everything is working properly, the the software will terminate the inference server in the final step.
  As a result you should see something like this in Kubeflow > Pipelines > Experiments:
+![pipeline](https://github.com/[atis06]/[kubeflow_project]/blob/[master]/ok.png?raw=true)
 
 If you have any questions regarding this topic, please feel free to contact with me.
