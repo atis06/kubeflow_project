@@ -5,7 +5,6 @@ import tensorflow as tf
 import requests
 import time
 import argparse
-import logging
 
 def read_args():
     parser = argparse.ArgumentParser(description='This software is able to create pipeline for MNIST, run an example and terminate KFServing. Please add your arguments...')
