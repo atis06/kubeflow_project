@@ -70,7 +70,7 @@ The software is going to work with the default values, but you can customize the
                             Name of the experiment (default: "End-to-End MNIST
                             Pipeline")
 
- After the program started, it will create the pipeline and start to request the KFServing inference server with an example until the answer arrives. If everything is working properly, the the software will terminate the inference server in the final step.
+ After the program started, it will create the pipeline and start to request the KFServing inference server with an example until the answer arrives. If everything is working properly the software will terminate the inference server in the final step.
  As a result you should see something like this in Kubeflow > Pipelines > Experiments:
  
 ![pipeline](ok.png)
