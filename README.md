@@ -27,7 +27,7 @@ Mnist_predict is an implementation of a Kubeflow pipeline written in Python. It 
  - shutting down KFServing inference server
 ### How to make mnist_predict work?
 All you need to do is to go to Kubeflow, create a notebook server and connect to it. Open a terminal window and clone this project from Github. 
-You need to install some dependecies in order to run the script properly. Run the following commands in the terminal:
+You need to install some dependecies in order to run the script properly. Execute the following commands in the terminal:
 
     pip3 install kfp --user
     pip3 install azure=="4.0.0" --user
