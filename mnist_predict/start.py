@@ -27,7 +27,7 @@ def read_args():
                         help='Version of the model (default: 1)')
     parser.add_argument('--experiment_name', dest='experiment_name', nargs='?',
                          default="End-to-End MNIST Pipeline",
-                        help='Name of the experiment (default: End-to-End MNIST Pipeline)')
+                        help='Name of the experiment (default: "End-to-End MNIST Pipeline")')
 
     return vars(parser.parse_args())
     
