@@ -11,7 +11,7 @@ Kubeflow can be installed on Linux, Windows and also on MacOs. I will show you h
 Setup Kubeflow (MiniKF) on Windows:
 You will need to install [Vagrant](https://www.vagrantup.com/downloads.html) and [Virtual Box](https://www.virtualbox.org/wiki/Downloads).
  1. Create a project folder.
- 2. Open command prompt as administrator and run *"vagrant init arrikto/minikf"* and *"vagrant up"* commands
+ 2. Open command prompt as administrator and run *"vagrant init arrikto/minikf"* and *"vagrant up"* commands.
  3. Go to 10.10.10.10 in your browser, then follow the setup instructions.
  4. After these steps you will be able to use Kubeflow platform.
 
