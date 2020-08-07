@@ -12,16 +12,16 @@ def read_args():
     
     parser.add_argument('--model_dir', dest='model_dir', nargs='?',
                          default="/train/model",
-                        help='Directory of the model to save (default: /train/model)')
+                        help='Directory of the model to save (default: "/train/model")')
     parser.add_argument('--data_dir', dest='data_dir', nargs='?',
                          default="/train/data",
-                        help='Directory of the data to save and load from (default: /train/data)')
+                        help='Directory of the data to save and load from (default: "/train/data")')
     parser.add_argument('--export_bucket', dest='export_bucket', nargs='?',
                          default="mnist",
-                        help='Which bucket the model need to be exported to (default: mnist)')         
+                        help='Which bucket the model need to be exported to (default: "mnist")')
     parser.add_argument('--model_name', dest='model_name', nargs='?',
                          default="mnist",
-                        help='Name of the model (default: mnist)')
+                        help='Name of the model (default: "mnist")')
     parser.add_argument('--model_version', dest='model_version', nargs='?',
                          default="1",
                         help='Version of the model (default: 1)')
