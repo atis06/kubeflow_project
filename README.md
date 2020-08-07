@@ -12,8 +12,8 @@ Setup Kubeflow (MiniKF) on Windows:
 You will need to install [Vagrant](https://www.vagrantup.com/downloads.html) and [Virtual Box](https://www.virtualbox.org/wiki/Downloads).
  1. Create a project folder.
  2. Open command prompt as administrator.
-	*vagrant init arrikto/minikf
-	vagrant up*
+    vagrant init arrikto/minikf
+    vagrant up
  3. Go to 10.10.10.10 in your browser, then follow the setup instructions.
  4. After these steps you will be able to use Kubeflow platform.
 
