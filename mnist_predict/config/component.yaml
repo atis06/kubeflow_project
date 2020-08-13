@@ -6,7 +6,7 @@ inputs:
   - {name: Default Model URI,               type: String, default: '',         description: 'Path of the S3 or GCS compatible directory containing default model.'}
   - {name: Canary Model URI,                type: String, default: '',         description: 'Optional Path of the S3 or GCS compatible directory containing canary model.'}
   - {name: Canary Model Traffic Percentage, type: String, default: '0',        description: 'Optional Traffic to be sent to default model'}
-  - {name: Namespace,                       type: String, default: 'kubeflow', description: 'Kubernetes namespace where the KFServing service is deployed.'}
+  - {name: Namespace,                       type: String, default: 'kubeflow-user', description: 'Kubernetes namespace where the KFServing service is deployed.'}
   - {name: Framework,                       type: String, default: 'tensorflow', description: 'Machine Learning Framework for Model Serving.'}
   - {name: Default Custom Model Spec,       type: String, default: '{}', description: 'Custom runtime default custom model container spec.'}
   - {name: Canary Custom Model Spec,        type: String, default: '{}', description: 'Custom runtime canary custom model container spec.'}
